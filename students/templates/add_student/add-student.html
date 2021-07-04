@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Add Student
+{% endblock title %}
+
+{% block css %} {% static 'styles/add-student.css' %} {% endblock css %}
+
+{% block content %}
+    
+    <section>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {% for a in form %}
+                <div>
+                    <ul>
+                        <li>{{a.label}}</li>
+                        <li>{{a}}</li>
+                        <li>{{a.errors}}</li>
+                    </ul>
+                </div>
+            {% endfor %} 
+            
+            {% if check_variable %}
+                <button type="submit" {% url 'students' %}>Update Student info </button>
+            {% else %}
+                <button type="submit" {% url 'students' %}> Add Student </button>
+            {% endif %}
+
+        </form> 
+{% endblock content %}

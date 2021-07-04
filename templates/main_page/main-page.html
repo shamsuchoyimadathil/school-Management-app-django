@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    School
+{% endblock title %}
+
+{% block css %}
+    {% static 'styles/main_page/main-page.css' %}
+{% endblock css %}
+
+{% block content %}
+
+<section>
+    <div>
+        <h1>ABC School</h1>
+    </div>
+    <div>
+        <p>“Live as if you were to die tomorrow. Learn as if you were to live forever” – Mahatma Gandhi</p>
+    </div>
+
+    <div>
+        <p>in this site , you can add your student for a better course , 
+            also you can check reviews , then take a better decision </p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h1><a href="{% url 'students' %}">Students</a></h1>
+        <ul>
+            <li>Look at all Students Information</li>
+            <li>Add Student</li>
+            <li>Edit and remove Student Infotmation</li>
+        </ul>
+    </div>
+    <div>
+        <h1><a href="{% url 'reviews' %}">Reviews</a></h1>
+        <ul>
+            <li>Look at the all Reviews and Rating </li>
+            <li>Write Your comment and Rating</li>
+        </ul>
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Reviews
+{% endblock title %} 
+
+{% block css %}
+    {% static 'styles/reviews.css' %}
+{% endblock css %} 
+
+{% block content %}
+    <section>
+        <nav>
+            <p><a href="{% url 'main-page' %}">Home </a></p>
+            <p><a href="{% url 'add-review' %}">Write Your Comment</a></p>
+        </nav>
+    </section>
+
+    <section>
+        
+        <form action="" method="GET">
+            {% for a in reviews %}
+             <div>
+                <ul>
+                    <li><h3><a href="{% url "detail" a.slug %}">{{a.name}}</a></h3></li>
+                    <p>{{a.text}}</p>
+                </ul>
+            </div>  
+            {% endfor %}
+        </form> 
+        
+       
+    </section>
+  
+{% endblock content %}

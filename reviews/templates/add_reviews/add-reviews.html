@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Add Reviews 
+{% endblock title %}
+
+{% block css %}
+    {% static 'styles/add-reviews.css' %}
+{% endblock css %}
+
+{% block content %}
+    <section>
+        <h1>Your Reviews:</h1>
+
+        <form method="POST" >
+            {% csrf_token %}   
+
+            {% for a in form %}
+                <div>
+                    <ul>
+                        <li>{{a.label}}</li>
+                        <li>{{a}}</li>
+                        <li>{{a.errors}}</li>
+                    </ul>
+                </div>
+            {% endfor %}
+
+            <button type="submit" {% url 'reviews' %}> Save Your Review </button>
+         </form>
+
+    </section>
+    
+{% endblock content %}

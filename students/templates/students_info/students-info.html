@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Student Information
+{% endblock title %}
+
+{% block css %} {% static 'styles/students-info.css' %} {% endblock css %}
+
+{% block content %}
+
+    <section>
+        <nav>
+            <p><a href="{% url 'main-page' %}">Home </a></p>
+            <p><a href="{% url 'add-student' %}">Add Student</a></p>
+        </nav>
+    </section>
+
+    <section>
+     {% comment %} <form action="" method="POST">
+     {% csrf_token %} {% endcomment %}
+        <table class="table">
+
+            <tr>
+                <th>name </th>
+                <th>DOB </th>
+                <th> Gender</th>
+                <th>Address</th>
+                <th> City </th>
+                <th>Zipcode </th>
+            </tr>
+
+            {% for a in latest_post %}
+                <tr>
+                    <td>{{a.full_name}}</td>
+                    <td>{{a.DOB}}</td>
+                    <td>{{a.gender}}</td>
+                    <td>{{a.full_address}}</td>
+                    <td>{{a.city}}</td>
+                    <td>{{a.zipcode}}</td>
+                    <td><a href="{% url 'edit-student' a.slug %}"><img src="https://img.icons8.com/material-outlined/24/000000/edit--v1.png" /></a>
+                        <a  id="myModal"><img src="https://img.icons8.com/ios-glyphs/30/000000/delete-forever.png"/></a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+
+        </table>
+
+     <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    </section>
+
+<script>
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+
+{% endblock content %}
