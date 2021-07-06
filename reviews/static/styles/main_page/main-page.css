@@ -1,7 +1,88 @@
 body{
-    background-color: rgb(247, 238, 160);
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
-div{
-    border: 1px solid black;
+.main__head-parent{
+    width: 100%;
+    background-color: #007bff ;
+    color: white;
+
+}
+
+.display-4{
+    text-align: center;    
+}
+
+.logout-span a{
+    color:#007bff ;
+    position: relative;
+    top: 0;
+    left: 80rem;
+    font-size: 20px;
+}
+.logout-span a:hover,
+.logout-span a:hover{
+    color: black;
+}
+
+.main__quote{
+    text-align: center;
+    font-size: 3rem;
+    color: teal;
+}
+
+.main__instructions{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.body-section{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    padding: 0;
+    margin: 2rem 1rem;
+    width: 40%;
+    text-align: center;
+    height: 10rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+a{
+    text-decoration: none;
+    color:#007bff ;
+}
+a:hover,
+a:active{
+    text-decoration: none;
+    color: white;
+}
+
+.card:hover,
+.card:active{
+    box-shadow: 2px 2px 2px 2px gray;
+    background-color: #007bff;
+    color: white;
+
+}
+
+.card:hover a,
+.card:active a{
+    color: rgb(255, 255, 255);
+}
+
+.card:hover a:hover,
+.card:active a:active{
+    border-bottom: rgb(238, 235, 68) 1px solid;
+    color: rgb(238, 235, 68);
+}
+li{
+    list-style: none;
 }

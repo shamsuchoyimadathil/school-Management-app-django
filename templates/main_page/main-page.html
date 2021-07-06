@@ -11,30 +11,35 @@
 
 {% block content %}
 
-<section>
+<section class="main-section">
+    <div class="main__head-parent">
+        <h1 class="display-4">ABC School</h1>
+    </div> 
     <div>
-        <h1>ABC School</h1>
+        <nav class="main__logout-parent">
+            <span class="logout-span"><a href="{% url 'logout' %}"> logout </a></span>
+        </nav>
     </div>
-    <div>
-        <p>“Live as if you were to die tomorrow. Learn as if you were to live forever” – Mahatma Gandhi</p>
+    <div class="main__quotes-parent">
+        <p class="main__quote">“Live as if you were to die tomorrow. Learn as if you were to live forever” – Mahatma Gandhi</p>
     </div>
 
     <div>
-        <p>in this site , you can add your student for a better course , 
+        <p class="main__instructions">in this site , you can add your student in our school , 
             also you can check reviews , then take a better decision </p>
     </div>
 </section>
 
-<section>
-    <div>
-        <h1><a href="{% url 'students' %}">Students</a></h1>
+<section class="body-section">
+    <div class="card" >
+        <h1 ><a href="{% url 'students' %}">Students</a></h1>
         <ul>
             <li>Look at all Students Information</li>
             <li>Add Student</li>
             <li>Edit and remove Student Infotmation</li>
         </ul>
     </div>
-    <div>
+    <div class="card">
         <h1><a href="{% url 'reviews' %}">Reviews</a></h1>
         <ul>
             <li>Look at the all Reviews and Rating </li>

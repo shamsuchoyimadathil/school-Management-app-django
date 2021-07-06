@@ -1,3 +1,43 @@
 body{
-    background-color: cadetblue;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.info__nav-main{
+    width: 100%;
+    background-color: #007bff;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: right;
+    
+}
+
+.info__nav-main p a{
+    color: white;
+    padding-right: 20px;
+}
+
+.info_table-head{
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    top: 3.5rem;
+}
+
+.table{
+    font-size: 18px;
+    font-weight: 200;
+    margin-top: 6rem;
+}
+
+.table_head-section{
+    font-size: 22px;
+    color: #0000FF;
+    font-weight: 600;
+} 
+
+.btn_image-resize{
+    width: 20px;
+    height: auto;
 }

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Register 
+{% endblock title %}
+
+{% block css %}
+{% static 'register.css' %}
+{% endblock css %}
+
+{% block content %}
+    <form action="" method="POST">
+    {% csrf_token %}
+        <div class="body-main">
+
+            <div class="main-sub">
+                <label for=""> User name:</label>
+                    {{form.username}}
+            </div>
+            <div class="main-sub ">
+                <label for="">Email:</label>
+                {{form.email}}
+            </div>
+            <div class="main-sub">
+                <label for=""> Password: </label>
+                {{form.password1}}
+            </div>
+            <div class="main-sub">
+                <label for=""> Confirmation password:</label>
+                {{form.password2}}
+            </div>
+
+            <input type="submit" value="Register" class="btn btn-primary register__btn">
+            <div class="main__login_btn">already have account ? <span><a href="{% url 'login' %}">login</a></span></div>
+        </div>
+     
+
+    </form>
+
+    <div> 
+        
+    </div>
+{% endblock content %}
+
+{% block js %}
+{% static 'register.js' %}
+{% endblock js %}
+

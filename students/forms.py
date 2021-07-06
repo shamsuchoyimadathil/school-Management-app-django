@@ -1,5 +1,10 @@
 from django import forms
-from django.db.models.base import Model 
+
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit , Layout ,Row ,Column
+from crispy_forms.bootstrap import FormActions
+
+
 from .models import Student
 
 class DateInput(forms.DateInput):
@@ -14,7 +19,6 @@ class StudentForm(forms.ModelForm):
         }
         widgets = {
             "DOB":DateInput()
-            #"Date_of_birth":DateInput(attrs={'type':'date'})
         }
         error_message ={
             "first_name":{
@@ -26,3 +30,32 @@ class StudentForm(forms.ModelForm):
                 "max_length":"must be shorter name"
             }
         }
+    
+    def __init__(self,*args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = "POST"
+        self.helper.layout = Layout( 
+            Row(
+                Column('first_name'),
+                Column('last_name'),
+
+            ),
+            Column(
+                'DOB',
+                'gender'
+            ),
+            Row(
+                Column('address_line_1'),
+                Column('address_line_2')
+            ),
+            Column(
+                'city',
+                'zipcode'
+            ),
+
+            FormActions(
+                Submit('add_student','Save Info', css_class="btn btn-primary col text-center")
+            ) 
+        )
+

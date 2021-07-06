@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(187, 185, 185);
+ }
+ 
+.card{
+    width: 80%;
+    position: relative;
+    top: 10rem;
+    left: 7rem;
+    padding: 0rem 3rem;
+    border-radius: 10px;
+}
+
+.detail__recommend{
+    color: #556B2F;
+}
+
+.detail__non-recommend{
+    color: #8B0000;
+}
+
+.detail__head{
+    font-size: 4rem;
+}
+
+
+p{
+    font-size: 1.5rem;
+}
+

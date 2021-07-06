@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
+
 
 {% block title %}
     Add Reviews 
@@ -11,22 +13,22 @@
 
 {% block content %}
     <section>
-        <h1>Your Reviews:</h1>
+        <h1 class="addreview__heading" >Your Review:</h1>
 
-        <form method="POST" >
+        <form method="POST" class="addreview__main-body" >
             {% csrf_token %}   
 
             {% for a in form %}
                 <div>
-                    <ul>
-                        <li>{{a.label}}</li>
-                        <li>{{a}}</li>
-                        <li>{{a.errors}}</li>
+                    <ul class="form-group ">
+                        <li class="addreview__label" >{{a.label}}</li>
+                        <li class="addreview__input" >{{a}}</li>
+                        <li class="addreview__errors" >{{a.errors}}</li>
                     </ul>
                 </div>
             {% endfor %}
 
-            <button type="submit" {% url 'reviews' %}> Save Your Review </button>
+            <button class="btn btn-info ml-4 mb-1" type="submit" {% url 'reviews' %}> Save Your Review </button>
          </form>
 
     </section>

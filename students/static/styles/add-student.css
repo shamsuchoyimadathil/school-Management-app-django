@@ -1,3 +1,16 @@
 body{
-    background-color: antiquewhite;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.addst__heading{
+    width: 90%;
+    text-align: center;
+}
+
+.addst__body{
+    width: 90%;
+    justify-items: center;
 }

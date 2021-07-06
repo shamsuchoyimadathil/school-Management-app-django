@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+login
+{% endblock title %}
+
+{% block css %}
+    {% static 'login.css' %}
+{% endblock css %}
+
+{% block content %}
+    <form action="" method="POST" >
+        {% csrf_token %} 
+            <div class="form-group">
+                <div class="form-control login__body">
+                     {{form.as_p}}
+                    <input class="btn btn-outline-primary " type="submit" value="login" >
+                    <div>
+                          <p class="pt-4">don't you have a account  ? <span><a href="{% url 'register' %}">Register</a></span></p>
+                    </div>
+                  
+                </div>
+                
+            </div>
+    </form>
+   
+{% endblock content %}

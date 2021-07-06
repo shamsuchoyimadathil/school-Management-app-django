@@ -6,7 +6,6 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         exclude = ("slug",)
-        #fields = "__all__"
         labels = {
             "name":"Your Name:",
             "text":"Your Comment:",

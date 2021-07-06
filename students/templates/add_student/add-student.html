@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     Add Student
@@ -8,25 +9,9 @@
 {% block css %} {% static 'styles/add-student.css' %} {% endblock css %}
 
 {% block content %}
+    <h1 class="addst__heading">Student Details</h1>
+    <div class="addst__body d-flex justify-content-center">
+        {% crispy form %}
+    </div>
     
-    <section>
-        <form method="POST" action="">
-            {% csrf_token %}
-            {% for a in form %}
-                <div>
-                    <ul>
-                        <li>{{a.label}}</li>
-                        <li>{{a}}</li>
-                        <li>{{a.errors}}</li>
-                    </ul>
-                </div>
-            {% endfor %} 
-            
-            {% if check_variable %}
-                <button type="submit" {% url 'students' %}>Update Student info </button>
-            {% else %}
-                <button type="submit" {% url 'students' %}> Add Student </button>
-            {% endif %}
-
-        </form> 
 {% endblock content %}

@@ -39,8 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles', 
 
     'reviews',
-    'students'
+    'students',
+    'accounts',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,3 +133,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = "/accounts/login/"
+LOGIN_REDIRECT_URL = "main-page"
+LOGOUT_REDIRECT_URL = "/accounts/login/"

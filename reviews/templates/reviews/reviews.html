@@ -11,7 +11,7 @@
 
 {% block content %}
     <section>
-        <nav>
+        <nav class="reviews__nav-main">
             <p><a href="{% url 'main-page' %}">Home </a></p>
             <p><a href="{% url 'add-review' %}">Write Your Comment</a></p>
         </nav>
@@ -21,11 +21,13 @@
         
         <form action="" method="GET">
             {% for a in reviews %}
-             <div>
-                <ul>
-                    <li><h3><a href="{% url "detail" a.slug %}">{{a.name}}</a></h3></li>
-                    <p>{{a.text}}</p>
-                </ul>
+             <div class="review__body">
+                <a href="{% url "detail" a.slug %}">
+                    <ul class="card m-3 review__body-list ">
+                        <li><h3>{{a.name}}</h3></li>
+                        <p>{{a.text}}</p>
+                    </ul>
+                </a>
             </div>  
             {% endfor %}
         </form> 

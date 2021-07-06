@@ -7,16 +7,20 @@
 {% endblock title %}  
 
 {% block css %}
-    {% static 'styles/detail-reviews.css' %}
+    {% static 'styles/detail-review.css' %}
 {% endblock css %}
 
 {% block content %}
     <form action="/" method="GET">
-        <div>
-            <h1>{{detail__review.name}}</h1>
-            <p>{{detail__review.rating}}</p>
+        <div class="card">
+            <h1 class="detail__head">{{detail__review.name}}</h1>
+            <p> my rating is {{detail__review.rating}}/5</p>
             <p>{{detail__review.text}}</p>
-            <p>{{detail__review.recommended}}</p>
+            {% if detail__review.rating >= 3 %}
+                <p class="detail__recommend">i recommended this</p>
+            {% else %}
+                <p class="detail__non-recommend">choose at your own risk</p>
+            {% endif %}
             
         </div>
     </form>
